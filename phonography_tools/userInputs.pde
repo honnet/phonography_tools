@@ -11,17 +11,17 @@ int mode = 1;
 //5 >> PCM text
 
 //output file name (will go into processing sketch folder)
-String outputFilename = "test";
+String outputFilename = "beat";
 
 float size[] = {6, 6};  //width & height of output file (diameter for phonograph)
-float minDiam = 6;  //set minimum inner diameter for phonograph record (if record player has autostop function this will probably be 5 inches at minimum)
+float minDiam = 5;  //set minimum inner diameter for phonograph record (if record player has autostop function this will probably be 5 inches at minimum)
 
 
 boolean recordFilter = true;  //apply low pass filter to input audio file?
 
 boolean normalize = true; // normalize audio?
 
-String fileName = "voice.wav";
+String fileName = "beat.wav";
 //String fileName = "InventioninC-major20s.wav";
 //String fileName = "excerpt.wav";  //input audio filename (place file in your data folder)
 //String fileName = "groove.mp3";
@@ -75,4 +75,4 @@ float runoutGroove = grooveWidth * 2; //set runout groove spiral spacing to twic
 float grooveDiameter = size[0] - 0.125; //greatest diameter of groove (move to systemvars?)
 //float rpm = 100.0/3.0; //playback rpm
 float rpm = 33; //playback rpm
-int leader = 1; //leader & runout length (in seconds)
+int leader = 0; //leader & runout length (in seconds)

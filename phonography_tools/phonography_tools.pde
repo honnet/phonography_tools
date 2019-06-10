@@ -107,13 +107,7 @@ void phonographSVG(String type) { //phonograph
     float spiralX = grooveDiameter / 2.0 * dpi; //set outer radius of overall groove area
     float spiralY = grooveDiameter / 2.0 * dpi;
 
-    spiralX -= i / float(outputFrameArray.length) * (grooveWidth + kerf) * (float(outputFrameArray.length) / outputSampleRate * rpm / 60.0); // set overall change of spiral radius
-    spiralY -= i / float(outputFrameArray.length) * (grooveWidth + kerf) * (float(outputFrameArray.length) / outputSampleRate * rpm / 60.0);
 
-    if (leader != 0 && i > outputFrameArray.length - (leader * int(outputSampleRate))) { //make spiral runout have double the normal groove width
-      spiralX -= ((leader * int(outputSampleRate) - (outputFrameArray.length - 1 - i)) / outputSampleRate) * (rpm / 60.0) * runoutGroove;
-      spiralY -= ((leader * int(outputSampleRate) - (outputFrameArray.length - 1 - i)) / outputSampleRate) * (rpm / 60.0) * runoutGroove;
-    }
 
     spiralX += outputFrameArray[i] * grooveWidth / 2; // use audio data to alter spiral radius
     spiralY += outputFrameArray[i] * grooveWidth / 2;
