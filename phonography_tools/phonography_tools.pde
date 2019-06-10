@@ -31,7 +31,7 @@ void setup() { //<>//
       } else {
         limit = false;
       }
-      if ((grooveDiameter - 2.0*(((grooveWidth + kerf)/dpi) * (timeFile.duration() + 2*float(leader)) * rpm / 60.0)) < minDiam) {  //alert if the audio is too long at the current settings 
+      if ((grooveDiameter - 2.0*(((grooveWidth + kerf)/dpi) * (timeFile.duration() + 2*float(leader)) * rpm / 60.0)) < minDiam) {  //alert if the audio is too long at the current settings
         println("too long");
         print("inner radius: ");
         print(grooveDiameter - 2.0*(((grooveWidth + kerf)/dpi) * (timeFile.duration() + 2*float(leader)) * rpm / 60.0));
@@ -45,7 +45,7 @@ void setup() { //<>//
 
     freq[0] = str(maxFilterFreq); //highest cutoff for low pass filter
     freq[1] = str(minFilterFreq); //lowest cutoff for low pass filter (for dynamic filter for phonograph option)
-    saveStrings("ftemp.txt", freq); //export temporary file of filter settings 
+    saveStrings("ftemp.txt", freq); //export temporary file of filter settings
 
     lowFS = new LowPassFS(maxFilterFreq, inputSampleRate);  // set cutoff frequency of lowpass filter (will remain static unless phonograph option is selected)
     out.addEffect(lowFS);  //add low pass filter to output audio stream for recording and encoding
@@ -57,19 +57,19 @@ void setup() { //<>//
       normalizeAudio(); //amplifies audio to full dynamic range w/o clipping
     }
     switch(mode) {
-    case 1: 
+    case 1:
       phonographSVG("interrupted");  //"continuous" or "interrupted" (must be interrupted for use with Adobe Illustrator)
       break;
-    case 2: 
+    case 2:
       linearWaveForm();  //saves an SVG file of a linear waveform
       break;
-      //case 3: 
+      //case 3:
       //  variableArea();  //saves an image file of variable area audio (similar to some optical sound for film projection)
       //  break;
-      //case 4: 
+      //case 4:
       //  variableDensity();  //saves an image file of variable density audio (similar to some optical sound for film projection)
       //  break;
-    case 5: 
+    case 5:
       saveTextFile();  //saves PCM audio to a text file
       break;
     }
@@ -167,12 +167,12 @@ void saveTextFile() {
 //  pg.background(0);
 //  pg.noStroke();
 //  pg.fill(255);
-//pg.beginShape(); 
+//pg.beginShape();
 //  for (int i = 0; i < outputFrameArray.length; i++){
 //    pg.vertex(i, (bitDepth - map(outputFrameArray[i], -1, 1, 0, bitDepth))/2);
 //  }
 //   for (int i = outputFrameArray.length-1; i >= 0; i--){
-//    pg.vertex(i, (bitDepth - map(outputFrameArray[i], -1, 1, 0, bitDepth))/2 + map(outputFrameArray[i], -1, 1, 0, bitDepth)); 
+//    pg.vertex(i, (bitDepth - map(outputFrameArray[i], -1, 1, 0, bitDepth))/2 + map(outputFrameArray[i], -1, 1, 0, bitDepth));
 //  }
 //  pg.endShape();
 //  pg.dispose();
