@@ -3,7 +3,7 @@ void setup() { //<>//
   font = createFont("Helvetica-6.vlw", 6);  //load fonts to output settings in final file
   smallfont = createFont("Helvetica-4.vlw", 4);
 
-  size(0, 0); //will change with GUI
+  size(600, 600); //will change with GUI
 
   if (mode == 1) {  //if phonograph mode is selected, keep circular dimensions
     size[1] = size[0];
